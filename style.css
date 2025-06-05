@@ -32,8 +32,8 @@ body {
   width: 50px;
 }
 
-.umami-label {
-  width: 80px; /* 4文字分に調整 */
+#label-umami {
+  width: 80px;
 }
 
 .label-en {
@@ -47,7 +47,7 @@ body {
   position: relative;
   width: 300px;
   height: 300px;
-  margin: 40px auto 0 auto; /* 上に余白追加 */
+  margin: 0 auto 0 auto; /* 上のマージンを増やすことで画像表示位置を下げる */
 }
 
 #displayArea img {
