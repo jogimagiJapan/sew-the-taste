@@ -32,8 +32,10 @@ body {
   width: 50px;
 }
 
+/* うま味ラベルの調整（折り返し防止） */
 #label-umami {
-  width: 60px;
+  width: 70px;                  /* 少し広めに */
+  white-space: nowrap;         /* 改行させない */
 }
 
 .label-en {
@@ -81,4 +83,5 @@ body {
   color: #333;
   margin-top: 30px;
   margin-bottom: 10px;
+  text-align: center;
 }
