@@ -37,7 +37,7 @@ body {
 }
 
 .label-ja {
-  width: 70px;
+  width: 60px;
   white-space: nowrap;  /* ←改行させない */
 }
 
