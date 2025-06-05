@@ -56,7 +56,7 @@ document.getElementById("showButton").addEventListener("click", async function (
   document.getElementById("timestampText").textContent = `${timestamp}_${nickname}`;
 
   // Google Apps Script に送信
-  fetch("https://script.google.com/macros/s/AKfycbzweIJWFQZBzYg0wzjrnH7PfKQQGPVNDVKtzbK9A2NxX4nCfoiWRfRCLzedsHwjDjwm/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzZocx7DjujD9pwrvqUovN1gh45By1vEMecvLhmyLp-wFvglCtyKs1ZY-chgkNi5CzV/exec", {
     method: "POST",
     mode: "no-cors",
     headers: {
