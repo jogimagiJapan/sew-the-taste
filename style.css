@@ -1,71 +1,90 @@
+/* ページ全体の基本スタイル */
 body {
-  font-family: sans-serif;
-  text-align: center;
-  padding: 20px;
+  font-family: sans-serif;        /* サンセリフ体のフォントを使用 */
+  text-align: center;             /* テキストを中央揃え */
+  padding: 20px;                  /* 全体に20pxの内側余白 */
 }
 
+/* タイトルなどを中央揃えにするためのクラス */
 .center {
   text-align: center;
 }
 
+/* 「5つの味を10段階で教えてください」などのガイドテキスト用 */
 #guideText {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 1rem;                /* フォントサイズは標準（16px相当） */
+  color: #333;                    /* 濃いグレーで読みやすく */
+  margin-bottom: 20px;           /* テキストの下に余白を設ける */
 }
 
+/* スライダーとボタンなどを含む入力エリア全体 */
 #inputArea {
-  display: inline-block;
-  text-align: left;
-  margin-bottom: 60px;
+  display: inline-block;          /* 中央揃えにしつつブロック表示 */
+  text-align: left;               /* 中身は左揃え */
+  margin-bottom: 10px;           /* 下に10pxの余白 → 画像表示との間隔 */
 }
 
+/* 各味スライダーを並べる領域のレイアウト */
 .slider {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 6px 0;
-  gap: 8px;
+  display: flex;                  /* 横並びにするためFlexbox使用 */
+  align-items: center;           /* 垂直方向の中央揃え */
+  justify-content: space-between;/* 要素間を均等に配置 */
+  margin: 6px 0;                  /* 上下に6pxの間隔 */
+  gap: 8px;                       /* 子要素間の間隔を8pxに */
 }
 
+/* 各日本語ラベル（甘味・塩味など）の幅を統一 */
 .slider span {
-  width: 50px;
+  width: 50px;                    /* ラベル幅を固定（短め） */
 }
 
+/* 「うま味」ラベルのみ3文字分確保 */
 #label-umami {
-  width: 60px;
+  width: 60px;                    /* 3文字表示に少し広め */
 }
 
+/* 英語ラベル（SWEETなど）のスタイル */
 .label-en {
-  width: 80px;
-  text-align: right;
-  font-size: 0.9em;
-  color: #555;
+  width: 60px;                    /* 英語ラベルの幅を統一 */
+  text-align: left;               /* テキストは左寄せ */
+  font-size: 0.9em;               /* やや小さめの文字サイズ */
+  color: #555;                    /* 少し薄いグレー色で補助的に見せる */
 }
 
+/* 回転画像を表示する領域のスタイル */
 #displayArea {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin-top: 20px; /* デフォルトより小さめに設定 */
+  position: relative;            /* 子要素の位置を制御するためにrelative指定 */
+  width: 300px;                  /* 正方形サイズに設定（幅） */
+  height: 300px;                 /* 正方形サイズに設定（高さ） */
+  margin-top: 10px;              /* 上の入力エリアとの間隔を20pxに調整（小さめ） */
 }
 
+/* 回転画像のスタイル設定 */
 #displayArea img {
-  position: absolute;
+  position: absolute;           /* 全て同じ位置に重ねて表示する */
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%;                  /* displayArea にぴったりフィットさせる */
   height: 100%;
-  opacity: 0.9;
+  opacity: 0.9;                 /* 少し透けさせる（重なっても見やすい） */
 }
 
-.spin1 { animation: spin 30s linear infinite; }
-.spin2 { animation: spin 50s linear infinite; }
-.spin3 { animation: spin 70s linear infinite; }
-.spin4 { animation: spin 90s linear infinite; }
-.spin5 { animation: spin 110s linear infinite; }
+/* 各画像に異なる回転速度を設定（番号別） */
+.spin1 { animation: spin 30s linear infinite; }  /* 30秒で1周 */
+.spin2 { animation: spin 50s linear infinite; }  /* 50秒で1周 */
+.spin3 { animation: spin 70s linear infinite; }  /* 70秒で1周 */
+.spin4 { animation: spin 90s linear infinite; }  /* 90秒で1周 */
+.spin5 { animation: spin 110s linear infinite; } /* 110秒で1周 */
 
+/* 回転アニメーションの定義 */
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { transform: rotate(0deg); }              /* 開始時は0度 */
+  to   { transform: rotate(360deg); }            /* 終了時は360度（1周） */
+}
+
+/* キャプションエリア */
+#captionArea {
+  font-size: 1rem;                /* フォントサイズは標準（16px相当） */
+  color: #333;                    /* 濃いグレーで読みやすく */
+  margin-top: 20px;           /* テキストの上に余白を設ける */
 }
