@@ -1,78 +1,61 @@
 <!DOCTYPE html>
-<html lang="ja"> <!-- このHTML文書の言語は日本語 -->
+<html lang="ja">
 <head>
-  <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定（日本語表示対応） -->
-  <title>SEW THE TASTE</title> <!-- ブラウザのタブに表示されるタイトル -->
-  <link rel="stylesheet" href="style.css"> <!-- 外部CSSファイル（スタイル設定）を読み込む -->
+  <meta charset="UTF-8">
+  <title>SEW THE TASTE</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- タイトル（中央揃えはstyle.cssの .center クラスで指定） -->
   <h1 class="center">SEW THE TASTE</h1>
 
-  <!-- ユーザーへの案内文：「5つの味を10段階で教えてください」 -->
   <p id="guideText">5つの味を10段階で教えてください</p>
 
-  <!-- 入力エリア（スライダーやニックネームの入力フィールドを含む） -->
   <div id="inputArea">
-
-    <!-- ニックネームの入力欄 -->
     <label id="nicknameLabel">ユーザーネーム：
-      <input type="text" id="nickname"> <!-- テキスト入力欄。IDで後にJSから参照可能 -->
+      <input type="text" id="nickname">
     </label>
-    <br><br> <!-- 空行で見た目を調整 -->
+    <br><br>
 
-    <!-- 甘味スライダー -->
     <div class="slider">
-      <span>甘味：</span> <!-- 日本語ラベル -->
-      <input type="range" id="sweet" min="1" max="10" value="5"> 
-      <!-- スライダー。最小1、最大10、初期値5 -->
-      <span class="label-en">SWEET</span> <!-- 英語ラベル -->
+      <span>甘味：</span>
+      <input type="range" id="sweet" min="1" max="10" value="5">
+      <span class="label-en">SWEET</span>
     </div>
 
-    <!-- 塩味スライダー -->
     <div class="slider">
       <span>塩味：</span>
       <input type="range" id="salty" min="1" max="10" value="5">
       <span class="label-en">SALTY</span>
     </div>
 
-    <!-- 酸味スライダー -->
     <div class="slider">
       <span>酸味：</span>
       <input type="range" id="sour" min="1" max="10" value="5">
       <span class="label-en">SOUR</span>
     </div>
 
-    <!-- 苦味スライダー -->
     <div class="slider">
       <span>苦味：</span>
       <input type="range" id="bitter" min="1" max="10" value="5">
       <span class="label-en">BITTER</span>
     </div>
 
-    <!-- うま味スライダー -->
     <div class="slider">
-      <span id="label-umami">うま味：</span> <!-- 「うま味」だけ3文字なので別IDで幅を調整 -->
+      <span id="label-umami">うま味：</span>
       <input type="range" id="umami" min="1" max="10" value="5">
       <span class="label-en">UMAMI</span>
     </div>
 
-    <br> <!-- ボタンとの間に空白を入れる -->
-
-    <!-- 「表示」ボタン。クリックで画像生成などの処理を開始 -->
+    <br>
     <button id="showButton">表示</button>
-
   </div>
 
-  <!-- 結果の画像を表示するエリア。JavaScriptで画像を追加 -->
-  <div id="displayArea"></div>
-<br> <!-- 空行で見た目を調整 -->
-
-  <!-- キャプションを表示するエリア-->
+  <!-- キャプション表示エリア（画像の上に表示） -->
   <div id="captionArea"></div>
 
-  <!-- JavaScriptファイルを読み込む（ボタンクリックや画像生成など） -->
+  <!-- 回転画像表示エリア -->
+  <div id="displayArea"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
