@@ -136,6 +136,25 @@ input[type="range"]::-moz-range-thumb {
   background: #58B19F;
 }
 
+/* 共通：つまみの基本形（大きめ） */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -8px; /* バーとの位置調整 */
+  border: 2px solid white;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
 .label-ja {
   width: 60px;
   white-space: nowrap;  /* ←改行させない */
