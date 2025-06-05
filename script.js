@@ -21,7 +21,7 @@ document.getElementById("showButton").addEventListener("click", async function (
   // 各画像を読み込んで表示
   imageNames.forEach((imgName, index) => {
     const img = document.createElement("img");
-    img.src = `https://drive.google.com/uc?export=view&id=${getImageId(imgName)}`;
+    img.src = `images/${imgName}`;  // GitHub内のimagesフォルダから読み込む
     img.className = `spin${index + 1}`;
     displayArea.appendChild(img);
   });
@@ -33,7 +33,7 @@ document.getElementById("showButton").addEventListener("click", async function (
   // POSTリクエストでApps Scriptに送信
   fetch("https://script.google.com/macros/s/AKfycbzweIJWFQZBzYg0wzjrnH7PfKQQGPVNDVKtzbK9A2NxX4nCfoiWRfRCLzedsHwjDjwm/exec", {
     method: "POST",
-    mode: "no-cors",  // CORS回避
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
@@ -44,12 +44,3 @@ document.getElementById("showButton").addEventListener("click", async function (
     })
   });
 });
-
-// 画像IDマップ
-function getImageId(filename) {
-  const ids = {
-    "sweet_1.png": "ファイルID",
-    // ... 省略 ... 50枚分を書く（または工夫して共通リンク）
-  };
-  return ids[filename] || "";
-}
