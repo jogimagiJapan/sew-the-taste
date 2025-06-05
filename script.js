@@ -28,6 +28,8 @@ document.getElementById("showButton").addEventListener("click", async function (
   document.getElementById("bitter").disabled = true;
   document.getElementById("umami").disabled = true;
   document.getElementById("showButton").style.display = "none";
+  document.getElementById("nicknameLabel").style.display = "none";
+
 
   // 説明文を非表示
   const guideText = document.getElementById("guideText");
