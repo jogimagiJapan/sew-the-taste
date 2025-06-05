@@ -33,7 +33,7 @@ body {
 }
 
 .umami-label {
-  width: 60px; /* 3文字分に調整 */
+  width: 80px; /* 4文字分に調整 */
 }
 
 .label-en {
