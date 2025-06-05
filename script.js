@@ -16,11 +16,10 @@ document.getElementById("showButton").addEventListener("click", async function (
     `umami_${umami}.png`
   ];
 
-  // タイムスタンプ生成
   const now = new Date();
   const timestamp = `${now.getFullYear()}${(now.getMonth()+1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}_${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
 
-  // 入力欄を無効化
+  // 入力欄を無効化＋非表示にする
   nicknameInput.disabled = true;
   document.getElementById("sweet").disabled = true;
   document.getElementById("salty").disabled = true;
@@ -28,12 +27,12 @@ document.getElementById("showButton").addEventListener("click", async function (
   document.getElementById("bitter").disabled = true;
   document.getElementById("umami").disabled = true;
   document.getElementById("showButton").style.display = "none";
+  document.getElementById("nicknameLabel").style.display = "none";
+  document.getElementById("instruction").style.display = "none";
 
-  // 表示領域をクリア
   const displayArea = document.getElementById("displayArea");
   displayArea.innerHTML = "";
 
-  // 画像を表示
   imageNames.forEach((imgName, index) => {
     const img = document.createElement("img");
     img.src = `images/${imgName}`;
@@ -41,7 +40,6 @@ document.getElementById("showButton").addEventListener("click", async function (
     displayArea.appendChild(img);
   });
 
-  // テキスト表示
   const caption = document.createElement("p");
   caption.textContent = "あなたが感じた味";
   caption.style.marginTop = "320px";
@@ -53,7 +51,7 @@ document.getElementById("showButton").addEventListener("click", async function (
   folderName.style.color = "#666";
   displayArea.appendChild(folderName);
 
-  // Apps Scriptに送信
+  // Google Apps Script に送信
   fetch("https://script.google.com/macros/s/AKfycbzweIJWFQZBzYg0wzjrnH7PfKQQGPVNDVKtzbK9A2NxX4nCfoiWRfRCLzedsHwjDjwm/exec", {
     method: "POST",
     mode: "no-cors",
@@ -67,3 +65,4 @@ document.getElementById("showButton").addEventListener("click", async function (
     })
   });
 });
+
