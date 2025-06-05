@@ -29,7 +29,7 @@ body {
 }
 
 .slider span {
-  width: 50px;
+  width: 60px;
 }
 
 /* うま味ラベルの調整（折り返し防止） */
@@ -39,7 +39,7 @@ body {
 }
 
 .label-en {
-  width: 60px;
+  width: 70px;
   text-align: left;
   font-size: 0.9em;
   color: #555;
@@ -64,16 +64,21 @@ body {
   opacity: 0.9;
 }
 
-/* 異なる回転速度 */
+/* 異なる回転速度（spin2とspin4は逆回転） */
 .spin1 { animation: spin 30s linear infinite; }
-.spin2 { animation: spin 50s linear infinite; }
+.spin2 { animation: spin-reverse 50s linear infinite; }  /* ←逆回転 */
 .spin3 { animation: spin 70s linear infinite; }
-.spin4 { animation: spin 90s linear infinite; }
+.spin4 { animation: spin-reverse 90s linear infinite; }  /* ←逆回転 */
 .spin5 { animation: spin 110s linear infinite; }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
 }
 
 /* キャプションエリア：中央に太字で表示 */
