@@ -2,6 +2,7 @@ body {
   font-family: sans-serif;
   text-align: center;
   padding: 20px;
+  margin: 0;
 }
 
 .center {
@@ -18,6 +19,8 @@ body {
   display: inline-block;
   text-align: left;
   margin-bottom: 20px;
+  max-width: 90vw;   /* スマホで画面からはみ出さないように */
+  width: 100%;
 }
 
 .slider {
@@ -26,6 +29,7 @@ body {
   justify-content: space-between;
   margin: 6px 0;
   gap: 8px;
+  flex-wrap: wrap; /* スマホで折り返し可能に */
 }
 
 .slider span {
@@ -34,8 +38,8 @@ body {
 
 /* うま味ラベルの調整（折り返し防止） */
 #label-umami {
-  width: 70px;                  /* 少し広めに */
-  white-space: nowrap;         /* 改行させない */
+  width: 70px;
+  white-space: nowrap;
 }
 
 .label-en {
@@ -45,13 +49,24 @@ body {
   color: #555;
 }
 
+/* 表示ボタン */
+#showButton {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px;
+  font-size: 1rem;
+  margin: 0 auto;
+  display: block;
+}
+
 /* 回転画像表示エリア：中央寄せ */
 #displayArea {
   position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  margin-top: 10px;
+  width: 90vw;
+  max-width: 300px;
+  height: 90vw;
+  max-height: 300px;
+  margin: 10px auto 0;
 }
 
 /* 回転画像のスタイル */
@@ -65,11 +80,11 @@ body {
 }
 
 /* 異なる回転速度（spin2とspin4は逆回転） */
-.spin1 { animation: spin 30s linear infinite; }
-.spin2 { animation: spin-reverse 50s linear infinite; }  /* ←逆回転 */
+.spin1 { animation: spin 20s linear infinite; }
+.spin2 { animation: spin-reverse 30s linear infinite; }  /* ←逆回転 */
 .spin3 { animation: spin 70s linear infinite; }
-.spin4 { animation: spin-reverse 90s linear infinite; }  /* ←逆回転 */
-.spin5 { animation: spin 110s linear infinite; }
+.spin4 { animation: spin-reverse 150s linear infinite; }  /* ←逆回転 */
+.spin5 { animation: spin 120s linear infinite; }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -89,4 +104,21 @@ body {
   margin-top: 30px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+/* レスポンシブ対応：スマホ用 */
+@media (max-width: 480px) {
+  .slider {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .slider span,
+  .label-en {
+    width: auto;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
 }

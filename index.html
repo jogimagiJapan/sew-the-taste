@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>SEW THE TASTE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ対応のために追加 -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,25 +18,25 @@
     <br><br>
 
     <div class="slider">
-      <span>甘味：</span>
+      <span>甘　味：</span>
       <input type="range" id="sweet" min="1" max="10" value="5">
       <span class="label-en">SWEET</span>
     </div>
 
     <div class="slider">
-      <span>塩味：</span>
+      <span>塩　味：</span>
       <input type="range" id="salty" min="1" max="10" value="5">
       <span class="label-en">SALTY</span>
     </div>
 
     <div class="slider">
-      <span>酸味：</span>
+      <span>酸　味：</span>
       <input type="range" id="sour" min="1" max="10" value="5">
       <span class="label-en">SOUR</span>
     </div>
 
     <div class="slider">
-      <span>苦味：</span>
+      <span>苦　味：</span>
       <input type="range" id="bitter" min="1" max="10" value="5">
       <span class="label-en">BITTER</span>
     </div>
@@ -51,10 +52,10 @@
   </div>
 
   <!-- キャプションとタイムスタンプの表示エリア -->
-<div id="captionArea">
-  <p id="captionText"></p>
-  <p id="timestampText" style="color: #666;"></p>
-</div>
+  <div id="captionArea">
+    <p id="captionText"></p>
+    <p id="timestampText" style="color: #666;"></p>
+  </div>
 
   <!-- 回転画像表示エリア -->
   <div id="displayArea"></div>
