@@ -50,7 +50,7 @@ document.getElementById("showButton").addEventListener("click", async function (
   // キャプションとフォルダ名表示
   const caption = document.createElement("p");
   caption.textContent = "あなたが感じた味のかたち";
-  caption.style.marginTop = "320px";
+  caption.style.marginTop = "20px";
   caption.style.fontWeight = "bold";
   displayArea.appendChild(caption);
 
