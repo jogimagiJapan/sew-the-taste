@@ -19,20 +19,25 @@ document.getElementById("showButton").addEventListener("click", async function (
   const now = new Date();
   const timestamp = `${now.getFullYear()}${(now.getMonth()+1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}_${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
 
-  // 入力欄を無効化＋非表示にする
+  // 入力操作を無効化＆非表示
   nicknameInput.disabled = true;
+  nicknameInput.style.display = "none";
   document.getElementById("sweet").disabled = true;
   document.getElementById("salty").disabled = true;
   document.getElementById("sour").disabled = true;
   document.getElementById("bitter").disabled = true;
   document.getElementById("umami").disabled = true;
   document.getElementById("showButton").style.display = "none";
-  document.getElementById("nicknameLabel").style.display = "none";
-  document.getElementById("instruction").style.display = "none";
 
+  // 説明文を非表示
+  const guideText = document.getElementById("guideText");
+  if (guideText) guideText.style.display = "none";
+
+  // 表示領域クリア
   const displayArea = document.getElementById("displayArea");
   displayArea.innerHTML = "";
 
+  // 画像表示
   imageNames.forEach((imgName, index) => {
     const img = document.createElement("img");
     img.src = `images/${imgName}`;
@@ -40,8 +45,9 @@ document.getElementById("showButton").addEventListener("click", async function (
     displayArea.appendChild(img);
   });
 
+  // キャプションとフォルダ名表示
   const caption = document.createElement("p");
-  caption.textContent = "あなたが感じた味";
+  caption.textContent = "あなたが感じた味のかたち";
   caption.style.marginTop = "320px";
   caption.style.fontWeight = "bold";
   displayArea.appendChild(caption);
@@ -51,7 +57,7 @@ document.getElementById("showButton").addEventListener("click", async function (
   folderName.style.color = "#666";
   displayArea.appendChild(folderName);
 
-  // Google Apps Script に送信
+  // Apps Script に送信
   fetch("https://script.google.com/macros/s/AKfycbzweIJWFQZBzYg0wzjrnH7PfKQQGPVNDVKtzbK9A2NxX4nCfoiWRfRCLzedsHwjDjwm/exec", {
     method: "POST",
     mode: "no-cors",
