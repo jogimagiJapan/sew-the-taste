@@ -1,4 +1,38 @@
-/* 中央表示のためのスタイル */
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+#inputArea {
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6px 0;
+  gap: 8px;
+}
+
+.slider span {
+  width: 50px;
+}
+
+.label-en {
+  width: 60px;
+  text-align: right;
+  font-size: 0.9em;
+  color: #555;
+}
+
 #displayArea {
   position: relative;
   width: 300px;
@@ -6,7 +40,6 @@
   margin: 40px auto;
 }
 
-/* 画像の重なりと回転 */
 #displayArea img {
   position: absolute;
   top: 0;
@@ -16,14 +49,12 @@
   opacity: 0.9;
 }
 
-/* 各画像に回転速度を指定 */
-.spin1 { animation: spin 3s linear infinite; }
-.spin2 { animation: spin 5s linear infinite; }
-.spin3 { animation: spin 7s linear infinite; }
-.spin4 { animation: spin 9s linear infinite; }
-.spin5 { animation: spin 11s linear infinite; }
+.spin1 { animation: spin 30s linear infinite; }
+.spin2 { animation: spin 50s linear infinite; }
+.spin3 { animation: spin 70s linear infinite; }
+.spin4 { animation: spin 90s linear infinite; }
+.spin5 { animation: spin 110s linear infinite; }
 
-/* 回転アニメーション */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

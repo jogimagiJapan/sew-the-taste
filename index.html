@@ -6,16 +6,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>SEW THE TASTE</h1>
+  <h1 class="center">SEW THE TASTE</h1>
 
-  <div style="text-align: center;">
-    <label>ニックネーム：<input type="text" id="nickname"></label><br><br>
+  <div id="inputArea">
+    <label>ニックネーム：
+      <input type="text" id="nickname">
+    </label><br><br>
 
-    <label>甘味：<input type="range" id="sweet" min="1" max="10" value="5"></label><br>
-    <label>塩味：<input type="range" id="salty" min="1" max="10" value="5"></label><br>
-    <label>酸味：<input type="range" id="sour" min="1" max="10" value="5"></label><br>
-    <label>苦味：<input type="range" id="bitter" min="1" max="10" value="5"></label><br>
-    <label>うま味：<input type="range" id="umami" min="1" max="10" value="5"></label><br><br>
+    <div class="slider">
+      <span>甘味：</span>
+      <input type="range" id="sweet" min="1" max="10" value="5">
+      <span class="label-en">SWEET</span>
+    </div>
+
+    <div class="slider">
+      <span>塩味：</span>
+      <input type="range" id="salty" min="1" max="10" value="5">
+      <span class="label-en">SALTY</span>
+    </div>
+
+    <div class="slider">
+      <span>酸味：</span>
+      <input type="range" id="sour" min="1" max="10" value="5">
+      <span class="label-en">SOUR</span>
+    </div>
+
+    <div class="slider">
+      <span>苦味：</span>
+      <input type="range" id="bitter" min="1" max="10" value="5">
+      <span class="label-en">BITTER</span>
+    </div>
+
+    <div class="slider">
+      <span>うま味：</span>
+      <input type="range" id="umami" min="1" max="10" value="5">
+      <span class="label-en">UMAMI</span>
+    </div><br>
 
     <button id="showButton">表示</button>
   </div>
