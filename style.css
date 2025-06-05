@@ -1,24 +1,29 @@
+/* 中央表示のためのスタイル */
 #displayArea {
   position: relative;
   width: 300px;
   height: 300px;
-  margin: 30px auto;
+  margin: 40px auto;
 }
 
+/* 画像の重なりと回転 */
 #displayArea img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0.9;
 }
 
+/* 各画像に回転速度を指定 */
 .spin1 { animation: spin 3s linear infinite; }
 .spin2 { animation: spin 5s linear infinite; }
 .spin3 { animation: spin 7s linear infinite; }
 .spin4 { animation: spin 9s linear infinite; }
 .spin5 { animation: spin 11s linear infinite; }
 
+/* 回転アニメーション */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
