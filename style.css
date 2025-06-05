@@ -38,30 +38,29 @@ body {
 
 input[type="range"] {
   width: 100%;
+  -webkit-appearance: none; /* Safari用 */
   appearance: none;
   height: 8px;
   border-radius: 5px;
   outline: none;
   margin: 0 8px;
+  background: transparent; /* トラックは疑似要素に任せる */
 }
 
-/* 共通：つまみの基本形 */
-input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+/* トラック全般 (Safari対応) */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 5px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   cursor: pointer;
-  margin-top: -5px;
-  border: 2px solid white;
 }
 
-input[type="range"]::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+/* Firefoxトラック */
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  border: 2px solid white;
 }
 
 /* ===== 味覚ごとの色指定 ===== */
@@ -136,9 +135,9 @@ input[type="range"]::-moz-range-thumb {
   background: #58B19F;
 }
 
-
-/* 共通：つまみの基本形（大きめ） */
+/* ===== 共通のつまみスタイル（大きめ） ===== */
 input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Safari対応 */
   appearance: none;
   width: 24px;
   height: 24px;
@@ -146,6 +145,8 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   margin-top: -8px; /* バーとの位置調整 */
   border: 2px solid white;
+  position: relative;
+  z-index: 2;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -154,6 +155,8 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid white;
+  position: relative;
+  z-index: 2;
 }
 
 .label-ja {
