@@ -36,6 +36,106 @@ body {
   width: 60px;
 }
 
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+  margin: 0 8px;
+}
+
+/* 共通：つまみの基本形 */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+  border: 2px solid white;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+/* ===== 味覚ごとの色指定 ===== */
+
+/* 甘味：ピンク */
+.slider-sweet::-webkit-slider-runnable-track {
+  background: #f8a5c2;
+}
+.slider-sweet::-webkit-slider-thumb {
+  background: #f8a5c2;
+}
+.slider-sweet::-moz-range-track {
+  background: #f8a5c2;
+}
+.slider-sweet::-moz-range-thumb {
+  background: #f8a5c2;
+}
+
+/* 塩味：水色 */
+.slider-salty::-webkit-slider-runnable-track {
+  background: #7ed6df;
+}
+.slider-salty::-webkit-slider-thumb {
+  background: #7ed6df;
+}
+.slider-salty::-moz-range-track {
+  background: #7ed6df;
+}
+.slider-salty::-moz-range-thumb {
+  background: #7ed6df;
+}
+
+/* 酸味：黄色 */
+.slider-sour::-webkit-slider-runnable-track {
+  background: #f9ca24;
+}
+.slider-sour::-webkit-slider-thumb {
+  background: #f9ca24;
+}
+.slider-sour::-moz-range-track {
+  background: #f9ca24;
+}
+.slider-sour::-moz-range-thumb {
+  background: #f9ca24;
+}
+
+/* 苦味：茶色 */
+.slider-bitter::-webkit-slider-runnable-track {
+  background: #82589F;
+}
+.slider-bitter::-webkit-slider-thumb {
+  background: #82589F;
+}
+.slider-bitter::-moz-range-track {
+  background: #82589F;
+}
+.slider-bitter::-moz-range-thumb {
+  background: #82589F;
+}
+
+/* うま味：緑 */
+.slider-umami::-webkit-slider-runnable-track {
+  background: #58B19F;
+}
+.slider-umami::-webkit-slider-thumb {
+  background: #58B19F;
+}
+.slider-umami::-moz-range-track {
+  background: #58B19F;
+}
+.slider-umami::-moz-range-thumb {
+  background: #58B19F;
+}
+
 .label-ja {
   width: 60px;
   white-space: nowrap;  /* ←改行させない */
