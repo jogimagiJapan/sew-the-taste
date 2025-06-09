@@ -62,8 +62,8 @@ imageNames.forEach((imgName, index) => {
 });
 
   // キャプションとタイムスタンプを更新
-  document.getElementById("captionText").textContent = "あなたが感じた味のかたち";
-  document.getElementById("timestampText").textContent = ${timestamp}_${nickname};
+document.getElementById("captionText").textContent = "あなたが感じた味のかたち";
+document.getElementById("timestampText").textContent = `${timestamp}_${nickname}`;
 
   // Google Apps Script に送信
   fetch("https://script.google.com/macros/s/AKfycbxykVHYkgOknT4Ufd6lEqbMjqozU89m6mYnerBX04IzUOM1bmm9xzmfHleE_i81XsbY/exec", {
