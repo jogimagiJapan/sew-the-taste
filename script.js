@@ -15,14 +15,14 @@ document.getElementById("showButton").addEventListener("click", async function (
   // ▼ それぞれの味覚に応じた画像ファイル名を作成
   // 例: "sweet_7.png", "sour_3.png" など
   const imageNames = [
-    `sweet_${sweet}.png`,
-    `salty_${salty}.png`,
-    `sour_${sour}.png`,
-    `bitter_${bitter}.png`,
-    `umami_${umami}.png`
+    sweet_${sweet}.png,
+    salty_${salty}.png,
+    sour_${sour}.png,
+    bitter_${bitter}.png,
+    umami_${umami}.png
   ];
 
-  // ▼ タイムスタンプの生成（例：20250605_213745）
+ // ▼ タイムスタンプの生成（例：20250605_213745）
 // 日付＋時刻をユニークな文字列として保存用に使用
 const now = new Date();
 
@@ -55,31 +55,26 @@ const timestamp = `${yyyy}${mm}${dd}_${hh}${min}${sec}`;
 
   imageNames.forEach((imgName, index) => {
     const img = document.createElement("img");
-    img.src = `images/${imgName}`;
-    img.className = `spin${index + 1}`;
+    img.src = images/${imgName};
+    img.className = spin${index + 1};
     displayArea.appendChild(img);
   });
 
   // キャプションとタイムスタンプを更新
   document.getElementById("captionText").textContent = "あなたが感じた味のかたち";
-  document.getElementById("timestampText").textContent = `${timestamp}_${nickname}`;
+  document.getElementById("timestampText").textContent = ${timestamp}_${nickname};
 
- // Google Apps Script に送信
-fetch("https://script.google.com/macros/s/...", {
-  method: "POST",
-  mode: "no-cors",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    nickname: nickname,
-    timestamp: timestamp,
-    images: imageNames,
-    sweet: sweet,
-    salty: salty,
-    sour: sour,
-    bitter: bitter,
-    umami: umami
-  })
+  // Google Apps Script に送信
+  fetch("https://script.google.com/macros/s/AKfycbxykVHYkgOknT4Ufd6lEqbMjqozU89m6mYnerBX04IzUOM1bmm9xzmfHleE_i81XsbY/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nickname: nickname,
+      timestamp: timestamp,
+      images: imageNames
+    })
+  });
 });
-
