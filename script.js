@@ -13,7 +13,7 @@ document.getElementById("showButton").addEventListener("click", async function (
   const umami = document.getElementById("umami").value;
 
   // ▼ それぞれの味覚に応じた画像ファイル名を作成
-  // 例: "sweet_7.png", "sour_3.png" など
+  // 例: "sweet_7.png", "sour_4.png" など
   const imageNames = [
     sweet_${sweet}.png,
     salty_${salty}.png,
