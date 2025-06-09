@@ -14,13 +14,14 @@ document.getElementById("showButton").addEventListener("click", async function (
 
   // ▼ それぞれの味覚に応じた画像ファイル名を作成
   // 例: "sweet_7.png", "sour_4.png" など
-  const imageNames = [
-    sweet_${sweet}.png,
-    salty_${salty}.png,
-    sour_${sour}.png,
-    bitter_${bitter}.png,
-    umami_${umami}.png
-  ];
+const imageNames = [
+  `sweet_${sweet}.png`,
+  `salty_${salty}.png`,
+  `sour_${sour}.png`,
+  `bitter_${bitter}.png`,
+  `umami_${umami}.png`
+];
+
 
  // ▼ タイムスタンプの生成（例：20250605_213745）
 // 日付＋時刻をユニークな文字列として保存用に使用
@@ -53,12 +54,12 @@ const timestamp = `${yyyy}${mm}${dd}_${hh}${min}${sec}`;
   const displayArea = document.getElementById("displayArea");
   displayArea.innerHTML = "";
 
-  imageNames.forEach((imgName, index) => {
-    const img = document.createElement("img");
-    img.src = images/${imgName};
-    img.className = spin${index + 1};
-    displayArea.appendChild(img);
-  });
+imageNames.forEach((imgName, index) => {
+  const img = document.createElement("img");
+  img.src = `images/${imgName}`; // ←修正済み
+  img.className = `spin${index + 1}`;
+  displayArea.appendChild(img);
+});
 
   // キャプションとタイムスタンプを更新
   document.getElementById("captionText").textContent = "あなたが感じた味のかたち";
