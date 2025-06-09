@@ -64,17 +64,22 @@ const timestamp = `${yyyy}${mm}${dd}_${hh}${min}${sec}`;
   document.getElementById("captionText").textContent = "あなたが感じた味のかたち";
   document.getElementById("timestampText").textContent = `${timestamp}_${nickname}`;
 
-  // Google Apps Script に送信
-  fetch("https://script.google.com/macros/s/AKfycbxykVHYkgOknT4Ufd6lEqbMjqozU89m6mYnerBX04IzUOM1bmm9xzmfHleE_i81XsbY/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      nickname: nickname,
-      timestamp: timestamp,
-      images: imageNames
-    })
-  });
+ // Google Apps Script に送信
+fetch("https://script.google.com/macros/s/...", {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    nickname: nickname,
+    timestamp: timestamp,
+    images: imageNames,
+    sweet: sweet,
+    salty: salty,
+    sour: sour,
+    bitter: bitter,
+    umami: umami
+  })
 });
+
