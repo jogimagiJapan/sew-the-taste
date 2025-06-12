@@ -54,6 +54,7 @@ const timestamp = `${yyyy}${mm}${dd}_${hh}${min}${sec}`;
   document.getElementById("umami").disabled = true;
   document.getElementById("showButton").style.display = "none";
   document.getElementById("nicknameLabel").style.display = "none";
+  document.getElementById("drinkLabel").style.display = "none";
   const guideText = document.getElementById("guideText");
   if (guideText) guideText.style.display = "none";
 
@@ -73,9 +74,9 @@ document.getElementById("captionText").textContent = "あなたが感じた味�
 document.getElementById("timestampText").textContent = `${timestamp}_${nickname}_${drink}`;
 
   // Google Apps Script に送信
-  fetch("https://script.google.com/macros/s/AKfycbxmCBwSg2cDehxOIC3mkegb2frJkQQRZClTwB6pjxti08GiRSPQR1iUffcf6_SkllfG/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxlB2WCRj-54UxLx9p3w9rNUsURVCL7Y3c2EWUpumt1Xvfxk5O4WnGXBMk6Rx9qJriA/exec", {
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
