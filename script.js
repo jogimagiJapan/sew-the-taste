@@ -74,16 +74,23 @@ document.getElementById("captionText").textContent = "あなたが感じた味�
 document.getElementById("timestampText").textContent = `${timestamp}_${nickname}_${drink}`;
 
   // Google Apps Script に送信
-  fetch("https://script.google.com/macros/s/AKfycbxrxLmllDkgs6FO21MwVnoeWqCZNfxvExCUhP_5n5F9FPXnmsU1crZ5POw6OmhN9uY6/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      nickname: nickname,
-      timestamp: timestamp,
-      drink: drink, // ←この行を追加
-      images: imageNames
-    })
-  });
+fetch("https://script.google.com/macros/s/AKfycbzWzRWUV1qc4pJxvNolJcqvOov05OVIrX8q01kojzJTFIW6i4PAp_GqYCGR0rPR3BvQ/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    nickname: nickname,
+    timestamp: timestamp,
+    drink: drink,
+    images: imageNames
+  })
+})
+.then(response => response.text())
+.then(text => {
+  console.log("GAS response:", text); // ← ここで結果確認！
+})
+.catch(error => {
+  console.error("Fetch error:", error); // ← 通信エラーをキャッチ
+});
 });
