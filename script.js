@@ -76,7 +76,6 @@ document.getElementById("timestampText").textContent = `${timestamp}_${nickname}
   // Google Apps Script に送信
   fetch("https://script.google.com/macros/s/AKfycbxlB2WCRj-54UxLx9p3w9rNUsURVCL7Y3c2EWUpumt1Xvfxk5O4WnGXBMk6Rx9qJriA/exec", {
     method: "POST",
-    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
