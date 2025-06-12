@@ -45,6 +45,8 @@ const timestamp = `${yyyy}${mm}${dd}_${hh}${min}${sec}`;
 //入力非表示化
   nicknameInput.disabled = true;
   nicknameInput.style.display = "none";
+  drinkInput.disabled = true;
+  drinkInput.style.display = "none";
   document.getElementById("sweet").disabled = true;
   document.getElementById("salty").disabled = true;
   document.getElementById("sour").disabled = true;
