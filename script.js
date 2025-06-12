@@ -4,6 +4,11 @@ document.getElementById("showButton").addEventListener("click", async function (
   // ▼ 入力されたユーザーネームを取得（空欄なら "guest" とする）
   const nicknameInput = document.getElementById("nickname");
   const nickname = nicknameInput.value || "guest";
+ 
+// ▼ 入力された飲んだものを取得（空欄なら "unknown" とする）
+const drinkInput = document.getElementById("drink");
+const drink = drinkInput.value || "unknown";
+
 
   // ▼ 各味覚のスライダーの値を取得（1〜10の整数）
   const sweet = document.getElementById("sweet").value;
@@ -63,7 +68,7 @@ imageNames.forEach((imgName, index) => {
 
   // キャプションとタイムスタンプを更新
 document.getElementById("captionText").textContent = "あなたが感じた味のかたち";
-document.getElementById("timestampText").textContent = `${timestamp}_${nickname}`;
+document.getElementById("timestampText").textContent = `${timestamp}_${nickname}_${drink}`;
 
   // Google Apps Script に送信
   fetch("https://script.google.com/macros/s/AKfycbxykVHYkgOknT4Ufd6lEqbMjqozU89m6mYnerBX04IzUOM1bmm9xzmfHleE_i81XsbY/exec", {
@@ -75,6 +80,7 @@ document.getElementById("timestampText").textContent = `${timestamp}_${nickname}
     body: JSON.stringify({
       nickname: nickname,
       timestamp: timestamp,
+      drink: drink, // ←この行を追加
       images: imageNames
     })
   });
