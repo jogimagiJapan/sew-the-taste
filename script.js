@@ -74,8 +74,9 @@ document.getElementById("captionText").textContent = "あなたが感じた味�
 document.getElementById("timestampText").textContent = `${timestamp}_${nickname}_${drink}`;
 
   // Google Apps Script に送信
-fetch("https://script.google.com/macros/s/AKfycbzWzRWUV1qc4pJxvNolJcqvOov05OVIrX8q01kojzJTFIW6i4PAp_GqYCGR0rPR3BvQ/exec", {
+fetch("https://script.google.com/macros/s/AKfycbwMx2B-v5C9iXh7A6Jg2Q0-nN85M9kzEJtpQksmQe9MicuBaFB4icfC6gWcW4Vvd18S/exec", {
   method: "POST",
+  mode: "no-cors", 
   headers: {
     "Content-Type": "application/json",
   },
